@@ -21,6 +21,10 @@ backend-ecommerce-api/
 ├── package.json             # Project dependencies
 └── README.md                # This file
 ```
+## ER Diagram
+This diagram shows the relationships between Users, Vendors, Products, Orders, and Categories.
+![ER diagram](ER-diagram.png)
+
 
 ## Installation
 
