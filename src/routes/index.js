@@ -37,6 +37,15 @@ const router = express.Router();
  * Health Check Route
  */
 /*
+/**
+ * @swagger
+ * /api/health:
+ *   get:
+ *     summary: Check if API is running
+ *     responses:
+ *       200:
+ *         description: API is healthy
+
 router.get('/health', (req, res) => {
   res.status(200).json({
     success: true,
