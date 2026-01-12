@@ -5,4 +5,7 @@ const categorySchema = new mongoose.Schema({
   description: String
 }, { timestamps: true });
 
+// Indexes for faster queries
+categorySchema.index({ name: 1 });              // Category name lookup
+
 module.exports = mongoose.model('Category', categorySchema);
