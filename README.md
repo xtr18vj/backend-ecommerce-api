@@ -79,7 +79,10 @@ npm start
 
 ## API Documentation (Swagger)
 
-Swagger UI is available 
+Swagger UI is available at: 
+Check API docs at localhost:5000/api-docs
+> Note: This URL works only when the backend is running on your machine.
+
 Use Swagger UI to:
 - View all API endpoints
 - Test APIs directly from the browser
