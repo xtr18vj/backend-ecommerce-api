@@ -6,29 +6,33 @@ require('dotenv').config();
 
 const errorHandler = require('./middleware/errorHandler');
 const routes = require('./routes/index');
+const setupSwagger = require('./config/swagger');
 
 const app = express();
 
-// Security: Set HTTP headers
+/* ✅ 1. Swagger FIRST */
+setupSwagger(app);
+
+// Security
 app.use(helmet());
 
-// CORS: Handle cross-origin requests
+// CORS
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   credentials: true,
 }));
 
-// Body Parser: Parse incoming requests
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ limit: '10mb', extended: true }));
+// Body parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Logger: Log HTTP requests
+// Logger
 app.use(morgan('combined'));
 
-// API Routes
+// API routes
 app.use('/api', routes);
 
-// 404 Handler
+// ❌ Swagger must be ABOVE this
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -37,7 +41,7 @@ app.use((req, res) => {
   });
 });
 
-// Global Error Handler (must be last)
+// Error handler
 app.use(errorHandler);
 
 module.exports = app;
