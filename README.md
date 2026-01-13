@@ -73,8 +73,20 @@ npm start
 ✓ Input validation with express-validator
 ✓ Global error handling
 ✓ Environment configuration with dotenv
+✓ Swagger API documentation
 
 ## API Endpoints
+
+## API Documentation (Swagger)
+
+Swagger UI is available at:
+
+http://localhost:5000/api-docs
+
+Use Swagger UI to:
+- View all API endpoints
+- Test APIs directly from the browser
+- Check request/response formats
 
 ### Health Check
 - `GET /api/health` - Check if API is running
@@ -105,6 +117,13 @@ npm start
 - `PUT /api/orders/:id` - Update order status (admin/vendor)
 
 ## Middleware
+- Helmet – Security headers
+- CORS – Cross-origin request handling
+- Morgan – HTTP request logging
+- authenticate – JWT authentication
+- authorize – Role-based access control
+- Swagger – API documentation
+- errorHandler – Global error handling
 
 ### Security
 - **Helmet.js** - Sets HTTP security headers
@@ -147,24 +166,29 @@ FRONTEND_URL=http://localhost:3000
 ```
 
 ## Next Steps
+- ✓ Project structure setup
+- ✓ ER diagram & schema design
+- ✓ Swagger API documentation
+- ✓ Express middleware & auth setup
+- Implement remaining APIs
+- Add validation and testing
 
-1. ✓ Project structure setup (DONE)
-2. Design database schema (ER diagram)
-3. Document API specifications (OpenAPI/Swagger)
-4. Implement authentication & authorization
-5. Create models and controllers
-6. Add route handlers
 
 ## Technologies Used
-
-- **Express.js** - Web framework
-- **Mongoose** - MongoDB ODM
-- **JWT** - Authentication
-- **Helmet** - Security headers
-- **CORS** - Cross-origin support
-- **Morgan** - HTTP logging
-- **Passport.js** - OAuth support
-- **bcryptjs** - Password hashing
+- **Node.js** – Server-side JavaScript runtime  
+- **Express.js** – Framework for RESTful APIs  
+- **MongoDB** – NoSQL database  
+- **Mongoose** – MongoDB schema modeling  
+- **JWT** – Authentication & authorization  
+- **bcryptjs** – Password hashing  
+- **Swagger (OpenAPI 3.0)** – API documentation  
+- **swagger-jsdoc** – Swagger specs from JSDoc  
+- **swagger-ui-express** – Interactive API UI  
+- **Helmet.js** – Security headers  
+- **CORS** – Cross-origin requests  
+- **Morgan** – HTTP request logging  
+- **dotenv** – Environment variable management  
+- **Nodemon** – Auto-reload dev server 
 
 ## License
 
