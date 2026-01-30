@@ -37,3 +37,4 @@ process.on('SIGINT', () => {
 
 // Start the server
 startServer();
+require("dotenv").config();
