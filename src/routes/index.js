@@ -2,22 +2,16 @@ const express = require('express');
 const router = express.Router();
 
 /**
- * Health Check Route
+ * @swagger
+ * /api/health:
+ *   get:
+ *     summary: Health check
+ *     responses:
+ *       200:
+ *         description: API is running
  */
 router.get('/health', (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: 'API is running',
-    timestamp: new Date().toISOString(),
-  });
+  res.json({ success: true });
 });
-
-/**
- * API Routes - Add routes here
- */
-// router.use('/auth', require('./authRoutes'));
-// router.use('/users', require('./userRoutes'));
-// router.use('/products', require('./productRoutes'));
-// router.use('/orders', require('./orderRoutes'));
 
 module.exports = router;
